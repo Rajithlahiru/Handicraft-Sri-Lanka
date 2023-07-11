@@ -8,6 +8,7 @@ const connectDB = require("./db/connect");
 
 //routers
 const authRouter = require("./routes/user/auth");
+const venderAuthRouter = require("./routes/vender/auth")
 
 // error handler
 const notFoundMiddleware = require("./middleware/not-found");
@@ -18,6 +19,7 @@ app.use(express.json());
 
 // routes
 app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/auth/vender", venderAuthRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
